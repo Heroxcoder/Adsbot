@@ -1,0 +1,16 @@
+from telethon import TelegramClient
+
+API_ID = 'YOUR_API_ID'
+API_HASH = 'YOUR_API_HASH'
+PHONE_NUMBER = 'YOUR_PHONE_NUMBER'
+
+client = TelegramClient('session_name', API_ID, API_HASH)
+
+async def main():
+    await client.start()
+    print("Session created! Your session string is:")
+    print(client.session.save())
+
+if __name__ == '__main__':
+    import asyncio
+    asyncio.run(main())
